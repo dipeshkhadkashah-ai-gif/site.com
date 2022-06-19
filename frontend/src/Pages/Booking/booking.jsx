@@ -105,26 +105,7 @@ contact:"",equipments:"",session:"",type:"",from:"",to:"" });
               <option>Rental</option>
             </Input>
           </FormGroup>
-          {/* <DatePickerComponent>
-          <FormGroup>
-            <Label for="exampleEmail">From</Label>
-            <Input
-              type="date"
-              name="from"
-              id="exampleselect"
-              placeholder="DD/MM/YYYY"
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label for="exampleEmail">To</Label>
-            <Input
-              type="date"
-              name="to"
-              id="exampleselect"
-              placeholder="DD/MM/YYYY"
-            />
-          </FormGroup>
-          </DatePickerComponent> */}
+         
           <FormGroup>
             <Label for="exampleEmail">From</Label>
             <Input
