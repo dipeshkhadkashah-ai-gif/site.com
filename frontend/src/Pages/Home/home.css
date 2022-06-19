@@ -1,0 +1,69 @@
+.header{
+    position: relative;
+}
+
+.header img{
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.header .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    opacity: 0.5;
+}
+
+.header .content{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+.header .content h6 {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.btn {
+    width: 300px;
+    background: var(--main);
+    color: #fff !important;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.btn:hover{
+    letter-spacing: 3px;
+    width: 310px; 
+}
+
+/*Home custom section */
+/* .custom{
+    margin: 150px, auto;
+}
+
+.custom img{
+    height: 600px;
+    width: 600px;
+    object-fit: cover;
+    margin-top: -80px;
+
+}
+
+.custom .col-sm-4 div{
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.custom .col-sm-4 h6{
+    font-size: 40px;
+    font-weight: 500;
+} */

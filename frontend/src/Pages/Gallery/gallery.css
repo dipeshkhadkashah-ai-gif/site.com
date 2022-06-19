@@ -1,0 +1,21 @@
+.gallery_main{
+    margin: 150px auto;
+}
+
+.gallery_main .box{
+    overflow: hidden;
+}
+
+.gallery_main img {
+    height: 550px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.gallery_main .box:hover img{
+    -o-animation: alternate;
+    animation: scale(1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+    cursor: pointer;
+}
