@@ -1,10 +1,17 @@
 import React from "react";
 import { Table } from "reactstrap";
 import people from "../../people.js";
+import Sidebar from "../Sidebar.jsx";
+import {Row,Col} from 'react-bootstrap'
 
 export default function Dashboard() {
   return (
-   <div className="fluid">
+    <Row>
+     
+      <Col md={3}> <Sidebar/>
+      </Col>
+ 
+         <Col md={8}>
        <h2 style={{textAlign:'center',margin:'10px',textDecoration:'underline'}}>List of Logged Users</h2>
         <Table dark className="mt-5" style={{fontSize:'20px'}}>
       <thead>
@@ -26,6 +33,8 @@ export default function Dashboard() {
         ))}
       </tbody>
     </Table>
-   </div>
+   </Col>
+    </Row>
+
   );
 }

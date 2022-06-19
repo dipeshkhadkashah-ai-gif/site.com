@@ -1,9 +1,37 @@
-import React from 'react'; //importing react from react
+import React, { useState } from 'react'; //importing react from react
 import ContactHeader from "../../images/5.jpg"; //importing images for contact pages
 import "./contact.css"; //importing css for styling
+import axios from 'axios'
 
  
 const Contact = () => {  //creating a function for contact
+  const [data,setData]=useState({
+    name:"",
+    email:"",
+    phone:"",
+    desc:""
+  })
+
+  const [errorMsg, setErrorMsg] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleChange = ({ currentTarget: input }) => {
+    setData({ ...data, [input.name]: input.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const url = "http://localhost:8080/api/contact/create";
+      const { data: res } = await axios.post(url, data);
+      console.log(res);
+      // window.location = "/";
+    } catch (error) {
+      setErrorMsg('error');
+      console.log(error)
+    }
+  };
+
   return (
     <>
     <div id="contact">
@@ -17,11 +45,12 @@ const Contact = () => {  //creating a function for contact
         </div>
         <div className="ContactContent">
           {/*  */}
-          <form action="">
+          <form onSubmit={handleSubmit}>
             <h6>Contact us Now</h6>
             <div className="form-group">
               <input
-                type="text"
+                type="name"
+    name='name'value={data.name} onChange={handleChange}
                 className="form-control"
                 placeholder="Your Name"
                 required
@@ -31,6 +60,8 @@ const Contact = () => {  //creating a function for contact
             <div className="form-group">
               <input
                 type="email"
+                name='email'value={data.email} onChange={handleChange}
+
                 className="form-control"
                 placeholder="Your Email"
                 required
@@ -39,7 +70,9 @@ const Contact = () => {  //creating a function for contact
 
             <div className="form-group">
               <input
-                type="number"
+                type="phone"
+                name='phone'value={data.phone} onChange={handleChange}
+
                 className="form-control"
                 placeholder="Your Number"
                 required
@@ -52,10 +85,12 @@ const Contact = () => {  //creating a function for contact
                 className="form-control"
                 placeholder="How We Can Help You"
                 required
+                name='desc'value={data.desc} onChange={handleChange}
+
               ></textarea>
             </div>
 
-            <button className="btn">Submit Now</button>
+            <button className="btn btn-block" type='submit' style={{backgroundColor:'blue'}}>Submit Now</button>
           </form>
           {/*  */}
         </div>

@@ -1,44 +1,50 @@
 import React, { useState } from "react"; //importing react form react
 import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap"; //importing functions form reactstrap
 import styles from "./styles.module.css"; //importing styles from style.css
-import axios from 'axios'
+import axios from "axios";
 // import Calendar from "react-calendar"; //importing a calendar from react-calendar
 //import video1 from "../../video/video1.mp4"; //importing video for background
 import H5 from "../../images/H5.jpg"; //importing image for background
 //import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
 
-
-
 export default function Booking() {
-  const [data, setData] = useState({ email: "", name: "",address:"",
-contact:"",equipments:"",session:"",type:"",from:"",to:"" });
-	const [error, setError] = useState("");
+  const [data, setData] = useState({
+    email: "",
+    name: "",
+    address: "",
+    contact: "",
+    equipments: "",
+    session: "",
+    type: "",
+    from: "",
+    to: "",
+  });
+  const [errorMsg, setErrorMsg] = useState("");
+  const [message, setMessage] = useState("");
 
-	const handleChange = ({ currentTarget: input }) => {
-		setData({ ...data, [input.name]: input.value });
-	};
+  const handleChange = ({ currentTarget: input }) => {
+    setData({ ...data, [input.name]: input.value });
+  };
 
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-		try {
-			const url = "http://localhost:8080/api/booking/create";
-			const { data: res } = await axios.post(url, data);
-			console.log(res)
-			window.location = "/";
-		} catch (error) {
-			if (
-				error.response &&
-				error.response.status >= 400 &&
-				error.response.status <= 500
-			) {
-				setError(error.response.data.message);
-			}
-		}
-	};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const url = "http://localhost:8080/api/booking/create";
+      const { data: res } = await axios.post(url, data);
+      console.log(res);
+      // window.location = "/";
+    } catch (error) {
+      setErrorMsg('error');
+    }
+  };
 
-  return ( 
+  const handleReset = () => {
+    window.location.reload();
+  };
+
+  return (
     <div className={styles.booking}>
-      <img src={H5.jpg}  />
+      <img src={H5.jpg} />
       <div className="container pt-5">
         <h3 style={{ textAlign: "center" }}>Book Now!</h3>
         <Form
@@ -47,10 +53,18 @@ contact:"",equipments:"",session:"",type:"",from:"",to:"" });
             padding: "50px",
             marginTop: "30px",
           }}
+          onSubmit={handleSubmit}
         >
           <FormGroup>
             <Label for="name">Full Name</Label>
-            <Input type="name" name="password" id="name" placeholder="Name" />
+            <Input
+              type="name"
+              name="name"
+              id="name"
+              placeholder="Name"
+              value={data.name}
+              onChange={handleChange}
+            />
           </FormGroup>
           <FormGroup>
             <Label for="exampleEmail">Email</Label>
@@ -59,6 +73,8 @@ contact:"",equipments:"",session:"",type:"",from:"",to:"" });
               name="email"
               id="exampleEmail"
               placeholder="someone@example.com"
+              value={data.email}
+              onChange={handleChange}
             />
           </FormGroup>
           <FormGroup>
@@ -68,20 +84,32 @@ contact:"",equipments:"",session:"",type:"",from:"",to:"" });
               name="address"
               id="address"
               placeholder="address"
+              value={data.address}
+              onChange={handleChange}
             />
           </FormGroup>
           <FormGroup>
-            <Label for="exampleEmail" maxlength="10" >Contact</Label>
+            <Label for="exampleEmail" maxlength="10">
+              Contact
+            </Label>
             <Input
               type="number"
               name="contact"
               id="contact"
               placeholder="Contact No"
+              value={data.contact}
+              onChange={handleChange}
             />
           </FormGroup>
           <FormGroup>
             <Label for="exampleSelect">Session</Label>
-            <Input type="select" name="select" id="exampleSelect">
+            <Input
+              type="select"
+              name="session"
+              value={data.session}
+              id="exampleSelect"
+              onChange={handleChange}
+            >
               <option>---</option>
               <option>PhotoGraphy</option>
               <option>VideoGraphy</option>
@@ -89,7 +117,13 @@ contact:"",equipments:"",session:"",type:"",from:"",to:"" });
           </FormGroup>
           <FormGroup>
             <Label for="exampleSelect">Type</Label>
-            <Input type="select" name="select" id="exampleSelect">
+            <Input
+              type="select"
+              name="type"
+              value={data.type}
+              id="exampleSelect"
+              onChange={handleChange}
+            >
               <option>---</option>
               <option>Basic</option>
               <option>Advance</option>
@@ -99,13 +133,19 @@ contact:"",equipments:"",session:"",type:"",from:"",to:"" });
           </FormGroup>
           <FormGroup>
             <Label for="exampleSelect">Equipments</Label>
-            <Input type="select" name="select" id="exampleSelect">
+            <Input
+              type="select"
+              name="equipments"
+              value={data.equipments}
+              id="exampleSelect"
+              onChange={handleChange}
+            >
               <option>---</option>
               <option>Own</option>
               <option>Rental</option>
             </Input>
           </FormGroup>
-         
+
           <FormGroup>
             <Label for="exampleEmail">From</Label>
             <Input
@@ -113,6 +153,8 @@ contact:"",equipments:"",session:"",type:"",from:"",to:"" });
               name="from"
               id="exampleselect"
               placeholder="DD/MM/YYYY"
+              value={data.from}
+              onChange={handleChange}
             />
           </FormGroup>
           <FormGroup>
@@ -122,12 +164,19 @@ contact:"",equipments:"",session:"",type:"",from:"",to:"" });
               name="to"
               id="exampleselect"
               placeholder="DD/MM/YYYY"
+              value={data.to}
+              onChange={handleChange}
             />
           </FormGroup>
-          <Button className={styles.submit}>Submit</Button>
-          <Button className={styles.reset}>Reset</Button>
+          {errorMsg &&( <p>{errorMsg}</p>)}
+          <Button type="submit" className={styles.submit}>
+            Submit
+          </Button>
+          <Button onClick={handleReset} className={styles.reset}>
+            Reset
+          </Button>
         </Form>
       </div>
-      </div>
+    </div>
   );
 }

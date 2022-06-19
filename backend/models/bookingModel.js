@@ -14,9 +14,7 @@ const bookingSchema = new mongoose.Schema({
   },
   address: {
     type: String,
-    required: [true],
-    maxlength: [20],
-    minlength: [10],
+ required:true
   },
   contact: {
     type: Number,
