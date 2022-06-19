@@ -18,6 +18,7 @@ import Payment from "./Pages/Payment/payment";
 import Profile from "./Pages/Profile/Profile";
 import Footer from "./Components/Footer/Footer";
 import CreateBooking from './Components/Admin/create/CreateBooking'
+import Bookings from "./Components/Admin/Bookings";
 // import { HashLink as Link } from "react-router-hash-link";
 // import ReactYouTubeExample from './Pages/Home/home';  //using a background youtube video player
 
@@ -43,6 +44,8 @@ const App = () => {
           <Route path="/dashboard" element={<Dashboard />}></Route>
           <Route path="/profile" element={<Profile />} />
           <Route path="/create/booking" element={<CreateBooking />} />
+          {/* Admin */}
+          <Route path="/admin/booking" element={<Bookings/>}/>
         </Routes>
       </Router>
       <Footer />

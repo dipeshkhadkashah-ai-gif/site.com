@@ -8,7 +8,7 @@ export default function Dashboard() {
   return (
     <Row>
      
-      <Col md={3}> <Sidebar/>
+      <Col md={2}> <Sidebar/>
       </Col>
  
          <Col md={8}>

@@ -11,7 +11,7 @@ import {
 
 function Sidebar() {
   return (
-    <Navbar color="dark" fixed dark='true' expand="false"  style={{height:'100%'}}>
+    <Navbar color="dark" fixed  expand="false"  style={{height:'100%'}}>
       <Nav
         style={{ display: "flex", flexDirection: "column" }}
       >
