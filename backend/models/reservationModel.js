@@ -10,6 +10,14 @@ const reservationSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  experience:{
+    type:String,
+    required:true
+  },
+  achievement:{
+    type:String,
+    required:true
+  }
 });
 
 module.exports = mongoose.model("Reservation", reservationSchema);

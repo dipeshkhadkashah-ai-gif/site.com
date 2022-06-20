@@ -12,12 +12,14 @@ import { Home, About, Gallery, Contact } from "./Pages"; //importing home from p
 import Login from "./Components/Login/Login";
 import SignUp from "./Components/Signup/SignUp";
 import Booking from "./Pages/Booking/booking";
+import Reservation from "./Components/Admin/Reservation";
 import Reservations from "./Pages/Reservations/Reservations";
 import Dashboard from "./Components/Admin/Dashboard";
 import Payment from "./Pages/Payment/payment";
 import Profile from "./Pages/Profile/Profile";
 import Footer from "./Components/Footer/Footer";
 import CreateBooking from './Components/Admin/create/CreateBooking'
+import CreateReservation from './Components/Admin/create/CreateReservation'
 import Bookings from "./Components/Admin/Bookings";
 // import { HashLink as Link } from "react-router-hash-link";
 // import ReactYouTubeExample from './Pages/Home/home';  //using a background youtube video player
@@ -43,9 +45,13 @@ const App = () => {
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/dashboard" element={<Dashboard />}></Route>
           <Route path="/profile" element={<Profile />} />
-          <Route path="/create/booking" element={<CreateBooking />} />
           {/* Admin */}
           <Route path="/admin/booking" element={<Bookings/>}/>
+          <Route path="/admin/reservations" element={<Reservation/>}/>
+          <Route path="/create/reservation" element={<CreateReservation />} />
+          <Route path="/create/booking" element={<CreateBooking />} />
+
+
         </Routes>
       </Router>
       <Footer />

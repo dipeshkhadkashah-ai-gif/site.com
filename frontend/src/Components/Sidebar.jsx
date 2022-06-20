@@ -29,8 +29,8 @@ function Sidebar() {
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="/booking">
-            Booking
+          <NavLink href="/admin/reservations">
+            Reservations
           </NavLink>
         </NavItem>
       </Nav>

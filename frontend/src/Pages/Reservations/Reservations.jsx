@@ -11,8 +11,22 @@ import {
   Button,
 } from "@mui/material";
 import styles from "./styles.module.css";
+import { useEffect } from "react";
+import axios from "axios";
 
 const Reservations = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const getReservations = async () => {
+      const { data: response } = await axios.get(
+        "http://localhost:8080/api/reservation"
+      );
+      setData(response);
+      console.log(response);
+    };
+    getReservations();
+  }, []);
   const persons = [
     { name: "Rejina", position: "BOD", post: "Portriat" },
     { name: "Deepesh", position: "MD", post: "Wild-Life" },
@@ -22,10 +36,10 @@ const Reservations = () => {
     { name: "John", position: "Junior", post: "Photographer" },
   ];
   return (
-    <div style={{margin:'50px'}}>
+    <div style={{ margin: "50px" }}>
       <h3 style={{ textAlign: "center" }}>Reservation</h3>
       <Grid container spacing={2}>
-        {persons.map((person) => (
+        {data.map((person) => (
           <Grid item xs={4}>
             <Card sx={{ maxWidth: 500 }}>
               <CardActionArea>
@@ -40,10 +54,10 @@ const Reservations = () => {
                     {person.name}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                   {person.position}
+                    {person.role}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                   {person.post}
+                    {person.proffession}
                   </Typography>
                 </CardContent>
               </CardActionArea>

@@ -17,6 +17,7 @@ const userRoutes = require("./routes/users");
 const authRoutes = require("./routes/auth");
 const bookingRoutes = require("./routes/booking");
 const contactRoutes = require("./routes/contactRoute");
+const reservationRoutes=require('./routes/reservationRoutes')
 
 //Connecting to Database
 connection();
@@ -26,6 +27,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/booking", bookingRoutes);
 app.use("/api/contact", contactRoutes);
+app.use("/api/reservation", reservationRoutes);
 
 const port = process.env.PORT || 8080;
 app.listen(port, console.log(`Listening on port ${port}...`));
