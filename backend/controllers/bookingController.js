@@ -46,7 +46,7 @@ const updateBooking=async(req,res)=>{
     if(!booking){
         res.json('Bookings not found')
     }
-    product =await Booking.findByIdAndUpdate(req.params.id,req.body,{
+    booking =await Booking.findByIdAndUpdate(req.params.id,req.body,{
         new:true,
         useFindAndModify:false,
         runValidators:true

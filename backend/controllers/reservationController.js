@@ -23,6 +23,7 @@ const getReservation=async(req,res)=>{
         res.json(error)
     }
 }
+
 // Get Reservation by Id
 const getReservationById=async(req,res)=>{
     try{
@@ -35,3 +36,23 @@ const getReservationById=async(req,res)=>{
 }
 
 module.exports={createReservation,getReservation,getReservationById}
+
+//update reservation
+const updateBooking=async(req,res)=>{
+    try{
+    let reservation=await Reservation.findById(req.params.id)
+    if(!booking){
+        res.json('Reservation not found')
+    }
+    reservation = await Reservation.findByIdAndUpdate(req.params.id,req.body,{
+        new:true,
+        useFindAndModify:false,
+        runValidators:true
+    })
+res.status(200).json(booking)
+    }catch(error){
+        console.log(error)
+        res.send(error)
+    }
+
+}
