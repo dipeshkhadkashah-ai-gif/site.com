@@ -1,6 +1,6 @@
-import React from "react";
-import {Button} from 'react-bootstrap'
-import axios from 'axios'
+import React from "react"; //importing react from react
+import {Button} from 'react-bootstrap'; //using bootstrap library for designs
+import axios from 'axios'; //cross connection
 const BookingDelete = ({id}) => {
       // Delete Booking
   const handleDelete=async()=>{

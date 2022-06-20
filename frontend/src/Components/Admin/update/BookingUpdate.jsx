@@ -1,5 +1,5 @@
-import axios from "axios";
-import React, { useState } from "react";
+import axios from "axios"; //for cross connection 
+import React, { useState } from "react"; //for react functions
 import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap"; //importing functions form reactstrap
 
 const BookingUpdate = ({ id }) => {

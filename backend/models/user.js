@@ -30,6 +30,7 @@ const validate = (data) => {
     lastName: Joi.string().required().label("Last Name"),
     email: Joi.string().email().required().label("Email"),
     password: passwordComplexity().required().label("Password"),
+    // confirm-password: passwordComplexity().required().label("Confirm-Password")
   });
   return schema.validate(data);
 };

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Row, Form, Button, Col } from "react-bootstrap";
-import axios from "axios";
+import { Row, Form, Button, Col } from "react-bootstrap"; //for designs
+import axios from "axios"; //cross connection
 
 const CreateReservation = () => {
   //   const [name, setName] = useState("");
