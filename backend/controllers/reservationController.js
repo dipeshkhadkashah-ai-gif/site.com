@@ -38,7 +38,7 @@ const getReservationById=async(req,res)=>{
 module.exports={createReservation,getReservation,getReservationById}
 
 //update reservation
-const updateBooking=async(req,res)=>{
+const updateReservation=async(req,res)=>{
     try{
     let reservation=await Reservation.findById(req.params.id)
     if(!booking){
