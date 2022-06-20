@@ -45,14 +45,15 @@ export default function Booking() {
   return (
     <div className={styles.booking}>
       <img src={H5.jpg} />
-      <div className="container pt-5">
+      <div className="d-flex flex-column justify-content-center container pt-5">
         <h3 style={{ textAlign: "center" }}>Book Now!</h3>
-        <Form
+        <Form className="align-self-center"
           style={{
             border: "2px solid grey",
             padding: "50px",
             marginTop: "30px",
-          }}
+            width: "550px",
+          }} 
           onSubmit={handleSubmit}
         >
           <FormGroup>
