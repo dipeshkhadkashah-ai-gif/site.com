@@ -37,7 +37,7 @@ const getReservationById=async(req,res)=>{
 
 module.exports={createReservation,getReservation,getReservationById}
 
-//update reservation
+//Update Reservation by Id
 const updateReservation=async(req,res)=>{
     try{
     let reservation=await Reservation.findById(req.params.id)
@@ -57,7 +57,7 @@ res.status(200).json(booking)
 
 }
 
-//delete reservation
+//Delete Reservation by Id
 const deleteReservation = async(req,res)=>{
     const reservation = await Reservation.findById(req.params.id)
     if(!booking){
@@ -70,4 +70,4 @@ const deleteReservation = async(req,res)=>{
     
 }
 
-module.exports={createReservation,getReservationById,getReservation,deleteReservation,updateReservation}
+module.exports={createReservation,getReservationById,getReservation,deleteReservation,updateReservation}; 

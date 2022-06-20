@@ -4,16 +4,20 @@ import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap"; //
 
 const BookingUpdate = ({ id }) => {
   const [data, setData] = useState({
+    // name: "",
     email: "",
     address: "",
     // contact: "",
     // from: "",
     // to: "",
   });
+
+  //function for handle change
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
   };
 
+  //function for update
   const handleUpdate = async (e) => {
     e.preventDefault();
     const { data: res } = await axios.put(
@@ -22,8 +26,29 @@ const BookingUpdate = ({ id }) => {
     );
     console.log(res);
   };
+
   return (
     <div>
+   
+          {/* <Label for="exampleEmail">Name</Label>
+          <Input
+            type="name"
+            name="name"
+            id="name"
+            placeholder="full name"
+            value={data.name}
+            onChange={handleChange}
+          />
+   
+          <Label for="exampleEmail">Contact</Label>
+          <Input
+            type="contact"
+            name="contact"
+            id="contact"
+            placeholder="Phone No"
+            value={data.name}
+            onChange={handleChange}
+          /> */}
    
           <Label for="exampleEmail">Email</Label>
           <Input

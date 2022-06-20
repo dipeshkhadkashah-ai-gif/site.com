@@ -1,10 +1,12 @@
-import React from "react";
-import { Button, Col, Row } from "react-bootstrap";
-import Sidebar from "../Sidebar";
-import ListGroup from "react-bootstrap/ListGroup";
-import { Modal, ModalBody,ModalHeader, Table } from "reactstrap";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react"; //importing react from react 
+import { Button, Col, Row } from "react-bootstrap"; //designs from reactstrap 
+import Sidebar from "../Sidebar"; //side for dashboard
+import ListGroup from "react-bootstrap/ListGroup";  //Listgroup for lists
+import { Modal, ModalBody,ModalHeader, Table } from "reactstrap"; //using reactstrap for designs
+import { useState, useEffect } from "react"; //using effects from react
+import axios from "axios"; //cross connection
+import ReservationUpdate from './update/ReservationUpdate'; //importing update
+import ReservationDelete from './delete/ReservationDelete'; //importing delete 
 
 
 const Reservations = () => {
@@ -51,7 +53,7 @@ const Reservations = () => {
                 <th>proffession</th>
                 <th>experience</th>
                 <th>achievement</th>
-               
+                <th>actions</th>
               </tr>
             </thead>
 

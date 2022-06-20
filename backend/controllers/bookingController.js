@@ -71,4 +71,4 @@ const deleteBooking=async(req,res)=>{
     
 }
 
-module.exports={createBooking,getBookingById,getBookings,deleteBooking,updateBooking}
+module.exports={createBooking,getBookingById,getBookings,deleteBooking,updateBooking}; 
