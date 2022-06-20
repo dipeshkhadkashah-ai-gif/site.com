@@ -5,12 +5,12 @@ export default function footer() {
   return (
     <>
       <footer>
-        <div className="footer-container">
-          <div className="row">
-            <div className="col-12 col-lg-12 mx-auto">
-              <div className="row">
-                <div className="col-6 col-lg-3">
-                  <h2>Social Sites</h2>
+        <div className="footer-container g-0">
+          <div className="row g-0">
+            <div className="col-10 col-lg-10 mx-auto g-0">
+              <div className="row g-0">
+                <div className="col-6 col-lg-3 g-0">
+                  <h3>Social Sites</h3>
                   <ul>
                     <li>
                       <a 
@@ -44,7 +44,7 @@ export default function footer() {
                   </ul>
                 </div>
                 <div className="col-6 col-lg-3">
-                  <h2>News</h2>
+                  <h3>News</h3>
                   <ul>
                     <li>
                       <a
@@ -78,7 +78,7 @@ export default function footer() {
                   </ul>
                 </div>
                 <div className="col-6 col-lg-3">
-                  <h2>Magazines</h2>
+                  <h3>Magazines</h3>
                   <ul>
                     <li>
                       <a
@@ -112,14 +112,14 @@ export default function footer() {
                   </ul>
                 </div>
                 <div className="col-6 col-lg-3">
-                  <h2>Follow Us</h2>
+                  <h3>Follow Us</h3>
                   <div className="row">
-                    <div className="col-3 mx-auto">
+                    <div className="col-3 ">
                       <a href="https://www.facebook.com/nepaltourismboard" target="_nepaltourismboard" className="footer-ul">
                         <i className="fab fa-facebook fontawesome-style"></i>
                       </a>
                     </div>
-                    <div className="col-3 mx-auto">
+                    <div className="col-3 ">
                       <a
                         href="https://www.instagram.com/exit_magazine/?hl=en"
                         target="exit_magazine" className="footer-ul"
@@ -127,12 +127,12 @@ export default function footer() {
                         <i className="fab fa-instagram fontawesome-style"></i>
                       </a>
                     </div>
-                    <div className="col-3 mx-auto">
+                    <div className="col-3 ">
                       <a href="https://youtu.be/4OiXfDdbtnM" target="_nepal4K" className="footer-ul">
                         <i className="fab fa-youtube fontawesome-style"></i>
                       </a>
                     </div>
-                    <div className="col-3 mx-auto">
+                    <div className="col-3 ">
                       <a href="https://twitter.com/nepaltourismb" target="_nepaltourismb" className="footer-ul">
                         <i className="fab fa-twitter fontawesome-style"></i>
                       </a>

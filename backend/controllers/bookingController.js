@@ -1,7 +1,19 @@
 const Booking=require('../models/bookingModel')
 // Creating Bookings
 const createBooking=async(req,res)=>{
-   const bookings=new Booking(req.body)
+   
+   const bookings=new Booking({
+    // user:req.user._id,
+    email:req.body.email,
+    name:req.body.name,
+    contact:req.body.contact,
+    session:req.body.session,
+    type:req.body.type,
+    equipments:req.body.equipments,
+    from:req.body.from,
+    to:req.body.to,
+    address:req.body.address
+   })
    try{
     const saveBooking=await bookings.save();
     res.json(saveBooking)
@@ -28,11 +40,34 @@ const getBookingById=async(req,res)=>{
     }
 }
 // Update BOOKING
-const updateBooking=async(re,res)=>{
+const updateBooking=async(req,res)=>{
+    try{
+    let booking=await Booking.findById(req.params.id)
+    if(!booking){
+        res.json('Bookings not found')
+    }
+    product =await Booking.findByIdAndUpdate(req.params.id,req.body,{
+        new:true,
+        useFindAndModify:false,
+        runValidators:true
+    })
+res.status(200).json(booking)
+    }catch(error){
+        console.log(error)
+        res.send(error)
+    }
 
 }
 // Delete BOOKING
 const deleteBooking=async(req,res)=>{
+    const booking=await Booking.findById(req.params.id)
+    if(!booking){
+        res.json("Booking not found")
+    }
+    await booking.remove()
+    res.json({
+        message:"Booking Deleted"
+    })
     
 }
 

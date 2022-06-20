@@ -32,7 +32,7 @@ export default function Booking() {
       const url = "http://localhost:8080/api/booking/create";
       const { data: res } = await axios.post(url, data);
       console.log(res);
-      // window.location = "/";
+      window.location.reload()
     } catch (error) {
       setErrorMsg('error');
     }

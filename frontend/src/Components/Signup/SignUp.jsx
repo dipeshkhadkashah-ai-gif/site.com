@@ -9,7 +9,7 @@ const Signup = () => {
 		lastName: "",
 		email: "",
 		password: "",
-		confirmPassword: "",
+		// confirmPassword: "",
 	});
 	const [error, setError] = useState("");
 	const navigate = useNavigate();
@@ -86,7 +86,7 @@ const Signup = () => {
 							required
 							className={styles.input}
 						/>
-						<input
+						{/* <input
 							type="password"
 							placeholder="Confirm Password"
 							name="confirmPassword"
@@ -94,7 +94,7 @@ const Signup = () => {
 							value={data.password}
 							required
 							className={styles.input}
-						/>
+						/> */}
 						{error && <div className={styles.error_msg}>{error}</div>}
 						<button type="submit" className={styles.green_btn}>
 							Sign Up
