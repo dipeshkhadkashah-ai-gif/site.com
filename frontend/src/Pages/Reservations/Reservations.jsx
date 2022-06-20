@@ -13,6 +13,7 @@ import {
 import styles from "./styles.module.css";
 import { useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Reservations = () => {
   const [data, setData] = useState([]);
@@ -27,20 +28,16 @@ const Reservations = () => {
     };
     getReservations();
   }, []);
-  const persons = [
-    { name: "Rejina", position: "BOD", post: "Portriat" },
-    { name: "Deepesh", position: "MD", post: "Wild-Life" },
-    { name: "Eunice", position: "Assistant", post: "Landscape" },
-    { name: "Sonu", position: "Owner", post: "Videography" },
-    { name: "William", position: "Senior", post: "Senior.Photographer" },
-    { name: "John", position: "Junior", post: "Photographer" },
-  ];
+
+  
+
   return (
     <div style={{ margin: "50px" }}>
       <h3 style={{ textAlign: "center" }}>Reservation</h3>
       <Grid container spacing={2}>
         {data.map((person) => (
           <Grid item xs={4}>
+            <Link to={`/reservation/${person._id}`} >
             <Card sx={{ maxWidth: 500 }}>
               <CardActionArea>
                 <CardMedia
@@ -67,6 +64,7 @@ const Reservations = () => {
                 </Button>
               </CardActions>
             </Card>
+            </Link>
           </Grid>
         ))}
       </Grid>

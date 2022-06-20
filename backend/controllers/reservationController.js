@@ -24,9 +24,9 @@ const getReservation=async(req,res)=>{
     }
 }
 // Get Reservation by Id
-const getReservation=async(req,res)=>{
+const getReservationById=async(req,res)=>{
     try{
-        const reservations=await Reservation.find({})
+        const reservations=await Reservation.findById(req.params.id)
         res.json(reservations)
 
     }catch(error){
@@ -34,4 +34,4 @@ const getReservation=async(req,res)=>{
     }
 }
 
-module.exports={createReservation,getReservation}
+module.exports={createReservation,getReservation,getReservationById}

@@ -21,6 +21,7 @@ import Footer from "./Components/Footer/Footer";
 import CreateBooking from './Components/Admin/create/CreateBooking'
 import CreateReservation from './Components/Admin/create/CreateReservation'
 import Bookings from "./Components/Admin/Bookings";
+import SingleReservation from "./Pages/Reservations/SingleReservation";
 // import { HashLink as Link } from "react-router-hash-link";
 // import ReactYouTubeExample from './Pages/Home/home';  //using a background youtube video player
 
@@ -48,6 +49,7 @@ const App = () => {
           {/* Admin */}
           <Route path="/admin/booking" element={<Bookings/>}/>
           <Route path="/admin/reservations" element={<Reservation/>}/>
+          <Route path="/reservation/:id" element={<SingleReservation/>}/>
           <Route path="/create/reservation" element={<CreateReservation />} />
           <Route path="/create/booking" element={<CreateBooking />} />
 
