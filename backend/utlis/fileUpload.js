@@ -1,9 +1,9 @@
-const multer = require("multer");
+const multer = require("multer"); //installed multer for file uploading
 
 // File Upload Using Multer
 const storage = multer.diskStorage({
   destination: (req, file, callback) => {
-    callback(null, "../client/public/uploads/blogs");
+    callback(null, "../frontend/public/uploads/");
     // callback(null, "./images");
   },
   filename: (req, file, callback) => {

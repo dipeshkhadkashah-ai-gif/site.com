@@ -9,24 +9,48 @@ const CreateReservation = () => {
   //   const [experience, setExperience] = useState("");
   //   const [achievement, setAchievement] = useState("");
     const [error, setError] = useState("");
-  const [data, setData] = useState({
-    name: "",
-    role: "",
-    experience: "",
-    achievement: "",
-    proffession: "",
-  });
-
-
-  const handleChange = ({ currentTarget: input }) => {
-    setData({ ...data, [input.name]: input.value });
+  // const [data, setData] = useState({
+  //   name: "",
+  //   role: "",
+  //   experience: "",
+  //   achievement: "",
+  //   proffession: "",
+  //   image:""
+  // });
+  const [name,setName]=useState("")
+  const [role,setRole]=useState("")
+  const [experience,setExperience]=useState("")
+  const [proffession,setProffession]=useState("")
+  const [achievement,setAchievement]=useState("")
+  const [image,setImage]=useState("")
+  const handleFile = (e) => {
+    setImage(e.target.files[0]);
   };
+
+
+  // const handleChange = ({ currentTarget: input }) => {
+  //   setData({ ...data, [input.name]: input.value });
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("role", role);
+      formData.append("proffession", proffession);
+      formData.append("experience", experience);
+      formData.append("achievement", achievement);
+      formData.append("image", image);
+
+      setName("");
+      setRole("");
+      setAchievement("");
+      setExperience("");
+      setProffession("");
+
       const url = "http://localhost:8080/api/reservation/create";
-      const { data: res } = await axios.post(url, data);
+      const { data: res } = await axios.post(url, formData);
       console.log(res);
       // window.location = "/";
     } catch (error) {
@@ -44,8 +68,8 @@ const CreateReservation = () => {
               type="name"
               name="name"
               placeholder="Enter name"
-              value={data.name}
-              onChange={handleChange}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             ></Form.Control>
           </Form.Group>
           <Form.Group controlId="email">
@@ -54,9 +78,8 @@ const CreateReservation = () => {
               type="text"
               name="role"
               placeholder="Enter role"
-              value={data.role}
-              onChange={handleChange}
-            ></Form.Control>
+              value={role}
+              onChange={(e) => setRole(e.target.value)}            ></Form.Control>
           </Form.Group>
           <Form.Group controlId="address">
             <Form.Label>Profession</Form.Label>
@@ -64,9 +87,8 @@ const CreateReservation = () => {
               type="text"
               name="proffession"
               placeholder="Enter profession"
-              value={data.proffession}
-              onChange={handleChange}
-            ></Form.Control>
+              value={proffession}
+              onChange={(e) => setProffession(e.target.value)}            ></Form.Control>
           </Form.Group>
           <Form.Group controlId="contact">
             <Form.Label>Experience</Form.Label>
@@ -74,9 +96,8 @@ const CreateReservation = () => {
               type="text"
               name="experience"
               placeholder="Enter Experience"
-              value={data.experience}
-              onChange={handleChange}
-            ></Form.Control>
+              value={experience}
+              onChange={(e) => setExperience(e.target.value)}            ></Form.Control>
           </Form.Group>
           <Form.Group controlId="contact">
             <Form.Label>Achievement</Form.Label>
@@ -84,11 +105,23 @@ const CreateReservation = () => {
               type="text"
               name='achievement'
               placeholder="Enter Achievement"
-              value={data.achievement}
-              onChange={handleChange}
-            ></Form.Control>
+              value={achievement}
+              onChange={(e) => setAchievement(e.target.value)}            ></Form.Control>
           </Form.Group>
-
+          <div className="mb-3">
+              <label htmlFor="exampleInputEmail1" className="form-label">
+                Upload an Image
+              </label>
+              <input
+                type="file"
+                filname="image"
+                className="form-control-file"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                // name="image"
+                onChange={handleFile}
+              />
+            </div>
           <Button
             style={{ backgroundColor: "blue" }}
             type="submit"

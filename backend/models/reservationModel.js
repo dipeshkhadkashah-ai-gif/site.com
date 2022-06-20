@@ -17,6 +17,10 @@ const reservationSchema = new mongoose.Schema({
   achievement:{
     type:String,
     required:true
+  },
+  image : {
+    type: String,
+    required: false
   }
 });
 
