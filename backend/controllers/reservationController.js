@@ -56,3 +56,18 @@ res.status(200).json(booking)
     }
 
 }
+
+//delete reservation
+const deleteReservation = async(req,res)=>{
+    const reservation = await Reservation.findById(req.params.id)
+    if(!booking){
+        res.json("Reservation not found")
+    }
+    await booking.remove()
+    res.json({
+        message:"Reservation Deleted"
+    })
+    
+}
+
+module.exports={createReservation,getReservationById,getReservation,deleteReservation,updateReservation}
