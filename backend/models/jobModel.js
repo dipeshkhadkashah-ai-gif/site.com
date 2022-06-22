@@ -6,7 +6,7 @@ const jobSchema = new mongoose.Schema({
         require: true
     },
     skill : {
-        type: Text,
+        type: String,
         require: true
     },
     hour : {
