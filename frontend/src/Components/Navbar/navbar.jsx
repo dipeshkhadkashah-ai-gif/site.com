@@ -28,6 +28,7 @@ function NavBar() {
             <Nav.Link href="/booking">Book Now</Nav.Link>
             <Nav.Link href="/reservation">Resevation</Nav.Link>
             <Nav.Link href="/payment">Payment</Nav.Link>
+            <Nav.Link href="/job">Job</Nav.Link>
           </Nav>
           <Nav className="ml-auto">
             {user ? (

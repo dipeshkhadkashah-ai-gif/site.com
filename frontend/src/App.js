@@ -25,6 +25,7 @@ import SingleReservation from "./Pages/Reservations/SingleReservation";
 import BookPhotographer from './Pages/Reservations/BookPhotographer.js'
 import DiplayPhotographer from './Components/Admin/DisplayPhotographer.js'
 import DispayContact from './Components/Admin/DisplayContact.js'
+import Job from "./Pages/Job/Job";
 // import { HashLink as Link } from "react-router-hash-link";
 // import ReactYouTubeExample from './Pages/Home/home';  //using a background youtube video player
 
@@ -58,6 +59,7 @@ const App = () => {
           <Route path="/admin/displaycontact" element={<DispayContact />} />
           <Route path="/create/booking" element={<CreateBooking />} />
           <Route path="/bookphotographer" element={<BookPhotographer />} />
+          <Route path="/job" element={<Job />} />
 
 
         </Routes>
