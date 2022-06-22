@@ -15,7 +15,6 @@ const About = () => { //creating a function for about
 
             </div>
         </div>
-        {/* About main start*/}
         <div className="about_main container">
             <div className="content">
                 <h6>
@@ -24,10 +23,10 @@ const About = () => { //creating a function for about
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, expedita.</p>
             </div>
             <div className="row">
-                <div className="col-sm-5">
+                <div className="col-sm-4">
                     <img src={AboutCustom} alt="" />
                 </div>
-                <div className="col-sm-7">
+                <div className="col-sm-5">
                     <h6>
                         <span>
                             T

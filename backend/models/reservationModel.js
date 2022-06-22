@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require("mongoose"); //module for reservation route
 
 const reservationSchema = new mongoose.Schema({
   name: {

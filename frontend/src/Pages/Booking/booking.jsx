@@ -44,7 +44,7 @@ export default function Booking() {
 
   return (
     <div className={styles.booking}>
-      <img src={H5.jpg} />
+      {/* <img src={H5} className="book-image" alt="Image"/> */}
       <div className="d-flex flex-column justify-content-center container pt-5">
         <h3 style={{ textAlign: "center" }}>Book Now!</h3>
         <Form className="align-self-center"

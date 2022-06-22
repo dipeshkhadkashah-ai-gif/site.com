@@ -77,7 +77,7 @@ export default function Payment() {
                 width: "200px",
                 padding: "20px",
                 fontSize: "20px",
-                margin: "90px 0px 50px 0px",
+                margin: "90px 0px 50px 60px",
               }}
               size="large"
               variant="contained"
@@ -87,7 +87,8 @@ export default function Payment() {
           </Grid>
           <Grid>
             <Button
-              sx={{ width: "200px", padding: "20px", fontSize: "20px" }}
+              sx={{ width: "200px", padding: "20px", fontSize: "20px",
+              margin: "50px 0px 50px 60px", }}
               size="large"
               variant="contained"
             >

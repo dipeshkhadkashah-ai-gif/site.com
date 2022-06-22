@@ -19,7 +19,7 @@ const Home = () => {
         <div className="overlay"></div>
         <div className="content">
           <h6>Enjoy the View</h6>
-          <button className="btn">Explore</button>
+          <button className="btn text-white">Explore</button>
         </div>
       </div>
       {/* Custom Section of Home-Page */}

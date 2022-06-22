@@ -1,7 +1,7 @@
 import React, { useState } from 'react'; //importing react from react
 import ContactHeader from "../../images/5.jpg"; //importing images for contact pages
 import "./contact.css"; //importing css for styling
-import axios from 'axios'
+import axios from 'axios'; //cross connection 
 
  
 const Contact = () => {  //creating a function for contact

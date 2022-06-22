@@ -12,14 +12,14 @@ const Gallery = () => { //creating a function
     return(
         <>
         <div id="gallery">
-        <div className="about">
+        {/* <div className="about">
             <div className="img">
                 <img src={GalleryHeader} alt="" />
             </div>
             <div className="overlay">
 
             </div>
-        </div>
+        </div> */}
         {/* Gallery main start */}
         <div className="gallery_main container">
             <div className="row">

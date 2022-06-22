@@ -60,10 +60,10 @@ res.status(200).json(booking)
 //Delete Reservation by Id
 const deleteReservation = async(req,res)=>{
     const reservation = await Reservation.findById(req.params.id)
-    if(!booking){
+    if(!reservation){
         res.json("Reservation not found")
     }
-    await booking.remove()
+    await reservation.remove()
     res.json({
         message:"Reservation Deleted"
     })

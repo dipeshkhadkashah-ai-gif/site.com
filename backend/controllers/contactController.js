@@ -18,4 +18,20 @@ const createContact = async (req, res) => {
   }
 };
 
-module.exports = { createContact };
+const getContacts = async(req, res) => {
+  try {
+    const contact = await Contact.find()
+    res.status(200).json({
+      success: true,
+      contact
+    })
+    
+  } catch (error) {
+    res.status(500).json({
+      succss: false,
+      message:"failed to get contacts!"
+    })
+  }
+}
+
+module.exports = { createContact, getContacts };
