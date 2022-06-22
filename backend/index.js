@@ -31,7 +31,7 @@ app.use("/api/booking", bookingRoutes);
 app.use("/api/contact", contactRoutes);
 app.use("/api/reservation", reservationRoutes);
 app.use("/api/book", bookRoutes);
-app.use("api/job", jobRoutes);
+app.use("/api/job", jobRoutes);
 
 const port = process.env.PORT || 8080;
 app.listen(port, console.log(`Listening on port ${port}...`));

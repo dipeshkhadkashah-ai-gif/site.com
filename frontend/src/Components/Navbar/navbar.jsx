@@ -22,8 +22,8 @@ function NavBar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto" style={{ fontSize: "18px" }}>
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/gallery">Gallery</Nav.Link>
             <Nav.Link href="/about">About</Nav.Link>
+            <Nav.Link href="/gallery">Gallery</Nav.Link>
             <Nav.Link href="/contact">Contact</Nav.Link>
             <Nav.Link href="/booking">Book Now</Nav.Link>
             <Nav.Link href="/reservation">Resevation</Nav.Link>

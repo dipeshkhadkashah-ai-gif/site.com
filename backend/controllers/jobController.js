@@ -4,9 +4,16 @@ const Job = require('../models/jobModel');
 const createJob = async(req, res) => {
     try{
         const job = await Job.create(req.body)
-        res.json(job)
+        res.status(201).json({
+            success: true, 
+            message:"Job created!",
+            job
+        })
     }catch(error) {
-        res.send({error: error.message})
+        res.status(500).json({
+            success: false,
+            message:"Failed to add job!"
+        })
     }
 
 
